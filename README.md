@@ -1,5 +1,5 @@
 # avocat-ai
-This app analyzez contracts and paperwork for inconsistencies and potential risks. Below is a template that will be refined after choosing the tech stack and implementing features.
+This app analyzez contracts and paperwork for inconsistencies and potential risks. The app will be aimed at Romanian users. Below is a template with the technologies and featurs of the app that will be refined during development.
 
 ## LLM
 I am thinking of using a general-purpose language model in the beginning and switch later to a fine-tuned model on legal documents.
@@ -45,14 +45,6 @@ Main features:
 - visually highlight clauses within the document that have been flagged as potentially problematic or inconsistent.
 - the flagged issues should be described in Romanian, explaining why a clause was flagged (e.g., "Clauză de răspundere unilaterală – favorizează doar una dintre părți").
 
-### Consider Romanian Legal Framework and Compliance
-
-To make the app useful for Romanian users, ensure that the checks you implement are aligned with Romanian laws and regulations. Key considerations include:
-
-- **Romanian Civil Code:** Contracts must comply with the rules defined by the Romanian Civil Code. The model should check for compliance with these rules (e.g., fairness in penalty clauses, clarity of terms).
-- **Specific Laws for Certain Types of Contracts:** Contracts like employment agreements, leases, and sales contracts have specific legal frameworks that your model should consider.
-- **EU Regulations:** If the contracts involve cross-border transactions or EU law applicability, ensure that the model checks for compliance with relevant EU regulations (e.g., GDPR for privacy clauses).
-
 ## Technology stack
 - frontend: react, angular or vue.js for user interaction
 - backend: python-based frameworks like flask, django, fastapi
@@ -65,7 +57,16 @@ To make the app useful for Romanian users, ensure that the checks you implement 
 - legal term glossary: provide explanations for legal terms in Romanian to help non-experts understand the flagged issues.
 - collaborative review: allow users to comment and make notes on flagged clauses for easier team collaboration
 
-### **Training a Romanian Legal Model**
+## **Romanian Legal Framework and Compliance**
+
+Ensure checks are aligned with Romanian laws and regulations. Key considerations include:
+
+- **Romanian Civil Code:** Contracts must comply with the rules defined by the Romanian Civil Code. The model should check for compliance with these rules (e.g., fairness in penalty clauses, clarity of terms).
+- **Specific Laws for Certain Types of Contracts:** Contracts like employment agreements, leases, and sales contracts have specific legal frameworks that your model should consider.
+- **EU Regulations:** If the contracts involve cross-border transactions or EU law applicability, ensure that the model checks for compliance with relevant EU regulations (e.g., GDPR for privacy clauses).
+
+
+## **Training a Romanian Legal Model**
 
 #### a. **Collecting Romanian Legal Data:**
    - You will need a dataset of Romanian legal documents for fine-tuning. Some potential sources include:
