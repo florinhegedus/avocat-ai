@@ -20,7 +20,7 @@ Options include:
 
 ### Text preprocessing
 - use Romanian-specific NLP tools for tokenization, lemmatization and named entity recognition. `SpaCy` has language models that can assist in processing Romanian text.
-- Tokenize the document into sections, sentences or clauses for better processing.
+- tokenize the document into sections, sentences or clauses for better processing.
 - legal term recognition: develop a specialized entity recognition model for Romanian legal terms, such as recognizing key parties, contract types, dates, obligations, and penalties.
 
 ### Document understanding
@@ -69,7 +69,7 @@ Ensure checks are aligned with Romanian laws and regulations. Key considerations
 ## **Training a Romanian Legal Model**
 
 #### a. **Collecting Romanian Legal Data:**
-   - You will need a dataset of Romanian legal documents for fine-tuning. Some potential sources include:
+   - Dataset of Romanian legal documents for fine-tuning. Some potential sources include:
      - **Public Romanian government websites** that host contracts and procurement documents.
      - **Legal databases** containing Romanian court decisions and contracts.
      - **Romanian legal textbooks**, guides, or open legal databases.
