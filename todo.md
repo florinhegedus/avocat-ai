@@ -1,7 +1,7 @@
 # To do list
 1. Choose backend and frontend frameworks
 
-Best choice seems to be `FastAPI` for the backend and `React` for frontend. The backend and frontend should be deployed in separate containers and the frontend will make calls to the backend API.
+Best choice seems to be `Django` for the backend and `React` for frontend. The backend and frontend should be deployed in separate containers and the frontend will make calls to the backend API.
 
 Backend features
 - user authentication and account management
