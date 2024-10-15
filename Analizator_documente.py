@@ -1,11 +1,11 @@
 import streamlit as st
 import base64
-import fitz  # PyMuPDF
+import fitz
 import io
 
-st.title("PDF Viewer with Highlighted Words Starting with 'm'")
+st.title("Analizator documente")
 
-uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+uploaded_file = st.file_uploader("Alege un fișier PDF", type="pdf")
 
 if uploaded_file is not None:
     # Read the uploaded PDF file
@@ -47,4 +47,4 @@ if uploaded_file is not None:
         ''', unsafe_allow_html=True)
 
 else:
-    st.write("Please upload a PDF file to view it here.")
+    st.write("Încarcă un PDF pentru ca aplicația să îl analizeze și să îți ofere un raport.")
