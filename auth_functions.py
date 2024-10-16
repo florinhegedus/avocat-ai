@@ -85,9 +85,11 @@ def sign_in(email:str, password:str) -> None:
 
     except requests.exceptions.HTTPError as error:
         error_message = json.loads(error.args[1])['error']['message']
-        if error_message in {"INVALID_EMAIL","EMAIL_NOT_FOUND","INVALID_PASSWORD","MISSING_PASSWORD"}:
-            st.session_state.auth_warning = 'Eroare: folosește un email și o parolă valide.'
+        if error_message in {"INVALID_EMAIL","EMAIL_NOT_FOUND","INVALID_PASSWORD","MISSING_PASSWORD", "INVALID_LOGIN_CREDENTIALS"}:
+            print(error_message)
+            st.session_state.auth_warning = 'Credențiale invalide'
         else:
+            print(error_message)
             st.session_state.auth_warning = 'Eroare: vă rugăm încercați mai târziu'
 
     except Exception as error:
@@ -107,7 +109,7 @@ def create_account(email:str, password:str) -> None:
     except requests.exceptions.HTTPError as error:
         error_message = json.loads(error.args[1])['error']['message']
         if error_message == "EMAIL_EXISTS":
-            st.session_state.auth_warning = 'Eroare: email-ul este folosit de alt cont'
+            st.session_state.auth_warning = 'Acest email este folosit de alt cont'
         elif error_message in {"INVALID_EMAIL","INVALID_PASSWORD","MISSING_PASSWORD","MISSING_EMAIL","WEAK_PASSWORD"}:
             st.session_state.auth_warning = 'Eroare: folosește un email și o parolă valide'
         else:
@@ -128,7 +130,7 @@ def reset_password(email:str) -> None:
         if error_message in {"MISSING_EMAIL","INVALID_EMAIL","EMAIL_NOT_FOUND"}:
             st.session_state.auth_warning = 'Eroare: folosiți o adresă de mail validă'
         else:
-            st.session_state.auth_warning = 'Error: Please try again later'    
+            st.session_state.auth_warning = 'Eroare: vă rugăm încercați mai târziu'   
     
     except Exception:
         st.session_state.auth_warning = 'Eroare: vă rugăm încercați mai târziu'
