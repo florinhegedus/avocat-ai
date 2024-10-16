@@ -20,6 +20,13 @@ if uploaded_file is not None:
     # Open the PDF with PyMuPDF
     doc = fitz.open(stream=pdf_data, filetype='pdf')
 
+    # Get dimensions of the first page to calculate aspect ratio
+    first_page = doc.load_page(0)
+    rect = first_page.rect
+    pdf_width = rect.width
+    pdf_height = rect.height
+    aspect_ratio = (pdf_height / pdf_width) * 100  # Calculate aspect ratio in percentage
+
     # Iterate over each page in the PDF
     for page_num, page in enumerate(doc):
         # Get the words on the page
@@ -47,9 +54,27 @@ if uploaded_file is not None:
     # Create a data URI for the PDF file
     pdf_display = f'data:application/pdf;base64,{base64_pdf}'
 
-    # Display the PDF file using an iframe
+    # Display the PDF file using an iframe with dynamic padding based on the aspect ratio
     st.markdown(f'''
-        <iframe src="{pdf_display}" width="700" height="1000" type="application/pdf"></iframe>
+        <style>
+            .pdf-container {{
+                width: 100%;
+                height: 0;
+                padding-bottom: {aspect_ratio}%; /* Dynamic aspect ratio */
+                position: relative;
+            }}
+            .pdf-container iframe {{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }}
+        </style>
+        <div class="pdf-container">
+            <iframe src="{pdf_display}" type="application/pdf"></iframe>
+        </div>
         ''', unsafe_allow_html=True)
 else:
     st.write("Încarcă un PDF pentru ca aplicația să îl analizeze și să îți ofere un raport.")
