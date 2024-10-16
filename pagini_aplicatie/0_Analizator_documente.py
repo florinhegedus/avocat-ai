@@ -3,6 +3,7 @@ import base64
 import fitz
 import io
 
+
 st.title("Analizator documente")
 
 uploaded_file = st.file_uploader("Alege un fișier PDF", type="pdf")
@@ -45,6 +46,5 @@ if uploaded_file is not None:
     st.markdown(f'''
         <iframe src="{pdf_display}" width="700" height="1000" type="application/pdf"></iframe>
         ''', unsafe_allow_html=True)
-
 else:
     st.write("Încarcă un PDF pentru ca aplicația să îl analizeze și să îți ofere un raport.")

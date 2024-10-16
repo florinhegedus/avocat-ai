@@ -80,3 +80,8 @@ Ensure checks are aligned with Romanian laws and regulations. Key considerations
 #### c. **Fine-tuning Process:**
    - Use frameworks like **Hugging Face Transformers** to fine-tune a pre-trained model (such as RoBERT) on your Romanian legal dataset.
    - Focus the fine-tuning on identifying clause types, checking compliance with Romanian laws, and spotting potentially shady terms.
+
+## What we did so far
+```
+pip install streamlit streamlit-authenticator PyMuPDF stripe requests
+```
