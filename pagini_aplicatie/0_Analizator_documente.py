@@ -3,7 +3,12 @@ import base64
 import fitz
 import io
 
-
+st.set_page_config(
+    page_title="Analizator documente",  # Title of the browser tab
+    page_icon="📄",  # Icon for the browser tab (document symbol)
+    layout="wide",  # Layout of the page ('centered' or 'wide')
+    initial_sidebar_state="expanded"  # Sidebar state ('auto', 'expanded', 'collapsed')
+)
 st.title("Analizator documente")
 
 uploaded_file = st.file_uploader("Alege un fișier PDF", type="pdf")

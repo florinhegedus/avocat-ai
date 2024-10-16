@@ -2,6 +2,12 @@ import streamlit as st
 import auth_functions
 
 
+st.set_page_config(
+    page_title="Contul meu",  # Title of the browser tab
+    page_icon="👤",  # Icon for the browser tab (user symbol)
+    layout="centered",  # Layout of the page ('centered' or 'wide')
+    initial_sidebar_state="auto"  # Sidebar state ('auto', 'expanded', 'collapsed')
+)
 st.title("Contul meu")
 
 # Show user information
